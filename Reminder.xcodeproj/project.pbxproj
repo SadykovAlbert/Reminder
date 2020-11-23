@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		503CEA68255B13DC004B55C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CEA67255B13DC004B55C9 /* AppDelegate.swift */; };
 		503CEA6A255B13DC004B55C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CEA69255B13DC004B55C9 /* SceneDelegate.swift */; };
-		503CEA6C255B13DC004B55C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CEA6B255B13DC004B55C9 /* ViewController.swift */; };
 		503CEA6F255B13DC004B55C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503CEA6D255B13DC004B55C9 /* Main.storyboard */; };
 		503CEA71255B13E1004B55C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503CEA70255B13E1004B55C9 /* Assets.xcassets */; };
 		503CEA74255B13E1004B55C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503CEA72255B13E1004B55C9 /* LaunchScreen.storyboard */; };
+		50991EAB255BEB82002AD265 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EAA255BEB82002AD265 /* Notifications.swift */; };
+		50991EAD255BEC77002AD265 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EAC255BEC77002AD265 /* TableViewController.swift */; };
+		50991EAF255BF01D002AD265 /* donut.png in Resources */ = {isa = PBXBuildFile; fileRef = 50991EAE255BF01D002AD265 /* donut.png */; };
+		50991EB1255BF456002AD265 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EB0255BF456002AD265 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		503CEA64255B13DC004B55C9 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503CEA67255B13DC004B55C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		503CEA69255B13DC004B55C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		503CEA6B255B13DC004B55C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		503CEA6E255B13DC004B55C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		503CEA70255B13E1004B55C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		503CEA73255B13E1004B55C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		503CEA75255B13E1004B55C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50991EAA255BEB82002AD265 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		50991EAC255BEC77002AD265 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		50991EAE255BF01D002AD265 /* donut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donut.png; sourceTree = "<group>"; };
+		50991EB0255BF456002AD265 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,10 @@
 			children = (
 				503CEA67255B13DC004B55C9 /* AppDelegate.swift */,
 				503CEA69255B13DC004B55C9 /* SceneDelegate.swift */,
-				503CEA6B255B13DC004B55C9 /* ViewController.swift */,
+				50991EAA255BEB82002AD265 /* Notifications.swift */,
+				50991EAC255BEC77002AD265 /* TableViewController.swift */,
+				50991EB0255BF456002AD265 /* AddViewController.swift */,
+				50991EAE255BF01D002AD265 /* donut.png */,
 				503CEA6D255B13DC004B55C9 /* Main.storyboard */,
 				503CEA70255B13E1004B55C9 /* Assets.xcassets */,
 				503CEA72255B13E1004B55C9 /* LaunchScreen.storyboard */,
@@ -127,6 +136,7 @@
 			files = (
 				503CEA74255B13E1004B55C9 /* LaunchScreen.storyboard in Resources */,
 				503CEA71255B13E1004B55C9 /* Assets.xcassets in Resources */,
+				50991EAF255BF01D002AD265 /* donut.png in Resources */,
 				503CEA6F255B13DC004B55C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503CEA6C255B13DC004B55C9 /* ViewController.swift in Sources */,
+				50991EB1255BF456002AD265 /* AddViewController.swift in Sources */,
+				50991EAB255BEB82002AD265 /* Notifications.swift in Sources */,
 				503CEA68255B13DC004B55C9 /* AppDelegate.swift in Sources */,
 				503CEA6A255B13DC004B55C9 /* SceneDelegate.swift in Sources */,
+				50991EAD255BEC77002AD265 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63KQRTRZ55;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AlbertSadykov.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63KQRTRZ55;
 				INFOPLIST_FILE = Reminder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AlbertSadykov.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

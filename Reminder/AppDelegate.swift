@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    let notifications = Notifications()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        notifications.notificationCenter.delegate = notifications
+        notifications.requestAutorization()
         return true
     }
 
