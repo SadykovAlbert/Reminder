@@ -14,7 +14,6 @@
 		503CEA74255B13E1004B55C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503CEA72255B13E1004B55C9 /* LaunchScreen.storyboard */; };
 		50991EAB255BEB82002AD265 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EAA255BEB82002AD265 /* Notifications.swift */; };
 		50991EAD255BEC77002AD265 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EAC255BEC77002AD265 /* TableViewController.swift */; };
-		50991EAF255BF01D002AD265 /* donut.png in Resources */ = {isa = PBXBuildFile; fileRef = 50991EAE255BF01D002AD265 /* donut.png */; };
 		50991EB1255BF456002AD265 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50991EB0255BF456002AD265 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		503CEA75255B13E1004B55C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50991EAA255BEB82002AD265 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		50991EAC255BEC77002AD265 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		50991EAE255BF01D002AD265 /* donut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donut.png; sourceTree = "<group>"; };
 		50991EB0255BF456002AD265 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +65,6 @@
 				50991EAA255BEB82002AD265 /* Notifications.swift */,
 				50991EAC255BEC77002AD265 /* TableViewController.swift */,
 				50991EB0255BF456002AD265 /* AddViewController.swift */,
-				50991EAE255BF01D002AD265 /* donut.png */,
 				503CEA6D255B13DC004B55C9 /* Main.storyboard */,
 				503CEA70255B13E1004B55C9 /* Assets.xcassets */,
 				503CEA72255B13E1004B55C9 /* LaunchScreen.storyboard */,
@@ -136,7 +133,6 @@
 			files = (
 				503CEA74255B13E1004B55C9 /* LaunchScreen.storyboard in Resources */,
 				503CEA71255B13E1004B55C9 /* Assets.xcassets in Resources */,
-				50991EAF255BF01D002AD265 /* donut.png in Resources */,
 				503CEA6F255B13DC004B55C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

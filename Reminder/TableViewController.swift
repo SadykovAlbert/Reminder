@@ -11,19 +11,15 @@ import UIKit
 class TableViewController: UITableViewController {
     
     let notification =  Notifications()
-   
-    var models = [MyReminder]()
     
+    var models = [MyReminder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-
-//        self.tableView.estimatedRowHeight = 80
-//        self.tableView.rowHeight = UITableView.automaticDimension
+        
     }
-    
     
     // MARK: - Table view data source
     
@@ -40,10 +36,10 @@ class TableViewController: UITableViewController {
         let date = models[indexPath.row].date
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy HH:mm"//"yyyy-MM-dd HH:mm"//"MMM, dd, YYYY"
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
         cell.detailTextLabel?.text = ""
         if let date = date{
-          cell.detailTextLabel?.text = formatter.string(from: date)
+            cell.detailTextLabel?.text = formatter.string(from: date)
         }
         
         cell.textLabel?.font = UIFont(name: "Arial", size: 25)
@@ -55,53 +51,19 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table View Delegate
     
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //
-    //        let cell = tableView.cellForRow(at: indexPath)
-    //        cell?.textLabel?.textColor = .red
-    //
-    //        let notificationType = models[indexPath.row]
-    //
-    //        let alert = UIAlertController(title: notificationType,
-    //                                      message: "After 5 seconds " + notificationType + " will appear",
-    //                                      preferredStyle: .alert)
-    //
-    //        let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
-    //
-    //            self.notification.scheduleNotification(notificationType: notificationType)
-    //        }
-    //
-    //        alert.addAction(okAction)
-    //        present(alert, animated: true, completion: nil)
-    //    }
-    
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        //let cell = tableView.cellForRow(at: indexPath)
-        //cell?.textLabel?.textColor = .blue
-    }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete{
             
-            
             let id = models[indexPath.row].identifier
-             
-            print(models[indexPath.row])
-             notification.notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
-             print(id)
             
-            
+            notification.notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
             
             models.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            
-            
-
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -115,18 +77,11 @@ class TableViewController: UITableViewController {
         
     }
     
-//    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-    
     // MARK: - Actions
     
     @IBAction func AddButtonPressed(_ sender: UIBarButtonItem) {
-                
+        
         guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {return}
-        
-        
         
         vc.title = "New Reminder"
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -141,16 +96,13 @@ class TableViewController: UITableViewController {
                 self.tableView.reloadData()
                 
                 if let date = date {
-                 self.notification.scheduleNotification(title: title, indentifier: id, date: date)
+                    self.notification.scheduleNotification(title: title, indentifier: id, date: date)
                 }
             }
         }
         navigationController?.pushViewController(vc, animated: true)
         
     }
-    
-//    @IBAction func unwind( _ seg: UIStoryboardSegue) {
-//    }
     
 }
 
