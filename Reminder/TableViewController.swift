@@ -7,33 +7,50 @@
 //
 
 import UIKit
+import RealmSwift
+
+class TaskList: Object{
+    @objc dynamic var task = ""
+    @objc dynamic var date: Date? = nil
+    @objc dynamic var identifier: String? = nil
+}
+
+
 
 class TableViewController: UITableViewController {
     
+    let realm = try! Realm()
+    
     let notification =  Notifications()
     
-    var models = [MyReminder]()
+    //var models = [MyReminder]()
+    var modelss: Results<TaskList>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        modelss = realm.objects(TaskList.self)
         
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        if modelss.count > 0 {return modelss.count}else{
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = models[indexPath.row].title
+        cell.textLabel?.text = modelss[indexPath.row].task
+
+        //cell.textLabel?.text = models[indexPath.row].title
         cell.textLabel?.textColor = .black
         
-        let date = models[indexPath.row].date
+        let date = modelss[indexPath.row].date
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy HH:mm"
@@ -52,36 +69,45 @@ class TableViewController: UITableViewController {
     // MARK: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+
         if editingStyle == .delete{
-            
-            let id = models[indexPath.row].identifier
-            
+
+            let editingRow = modelss[indexPath.row]
+            guard let id = editingRow.identifier else{return}
+
             notification.notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+
+            try! self.realm.write{
+                self.realm.delete(editingRow)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+            }
+            //models.remove(at: indexPath.row)
             
-            models.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+
         }
     }
-    
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        let movedCell = models.remove(at: sourceIndexPath.row)
-        models.insert(movedCell, at: destinationIndexPath.row)
-        tableView.reloadData()
-        
-    }
+
+//    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//
+//        //modelss
+//        let movedCell = models.remove(at: sourceIndexPath.row)
+//        models.insert(movedCell, at: destinationIndexPath.row)
+//        tableView.reloadData()
+//
+//    }
     
     // MARK: - Actions
     
     @IBAction func AddButtonPressed(_ sender: UIBarButtonItem) {
         
         guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {return}
+        
+        
         
         vc.title = "New Reminder"
         vc.navigationItem.largeTitleDisplayMode = .never
@@ -90,9 +116,21 @@ class TableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
                 
+                
+                
                 let id = "id_\(title)"
                 let new = MyReminder(title: title, date: date, identifier: id)
-                self.models.append(new)
+                
+                let task = TaskList()//(value: [new.title, new.date, new.identifier])
+                task.task = new.title
+                task.date = new.date
+                task.identifier = new.identifier
+                
+                try! self.realm.write{
+                    self.realm.add(task)
+                }
+                
+                //self.models.append(new)
                 self.tableView.reloadData()
                 
                 if let date = date {
