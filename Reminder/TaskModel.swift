@@ -9,25 +9,18 @@
 import Foundation
 import RealmSwift
 
+class Items: Object {
+    @objc dynamic var id: Int = 0
+    let tasks = List<Task>()
 
-class Task: Object{
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+class Task: Object {
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var task = ""
     @objc dynamic var date: Date? = nil
     @objc dynamic var identifier: String? = nil
 }
-//
-//class Items: Object {
-//    @objc dynamic var id: Int = 0
-//    let tasks = List<Task>()
-//
-//    override static func primaryKey() -> String? {
-//        return "id"
-//    }
-//}
-//
-//class Task: Object {
-//    @objc dynamic var id: String = UUID().uuidString
-//    @objc dynamic var task = ""
-//    @objc dynamic var date: Date? = nil
-//    @objc dynamic var identifier: String? = nil
-//}

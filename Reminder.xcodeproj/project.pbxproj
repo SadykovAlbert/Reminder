@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		238ACEE2B7E26218FCA59440 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA54FD828D210FFE4E883D59 /* Pods_Reminder.framework */; };
-		50168D4625824FEB00311E3D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50168D4525824FEB00311E3D /* StorageManager.swift */; };
 		50168D4A2582514F00311E3D /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50168D492582514F00311E3D /* TaskModel.swift */; };
 		503CEA68255B13DC004B55C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CEA67255B13DC004B55C9 /* AppDelegate.swift */; };
 		503CEA6A255B13DC004B55C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503CEA69255B13DC004B55C9 /* SceneDelegate.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50168D4525824FEB00311E3D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		50168D492582514F00311E3D /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		503CEA64255B13DC004B55C9 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503CEA67255B13DC004B55C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 				50991EAC255BEC77002AD265 /* TableViewController.swift */,
 				50168D492582514F00311E3D /* TaskModel.swift */,
 				50991EB0255BF456002AD265 /* AddViewController.swift */,
-				50168D4525824FEB00311E3D /* StorageManager.swift */,
 				503CEA6D255B13DC004B55C9 /* Main.storyboard */,
 				503CEA70255B13E1004B55C9 /* Assets.xcassets */,
 				503CEA72255B13E1004B55C9 /* LaunchScreen.storyboard */,
@@ -221,7 +218,6 @@
 				50991EB1255BF456002AD265 /* AddViewController.swift in Sources */,
 				50991EAB255BEB82002AD265 /* Notifications.swift in Sources */,
 				503CEA68255B13DC004B55C9 /* AppDelegate.swift in Sources */,
-				50168D4625824FEB00311E3D /* StorageManager.swift in Sources */,
 				503CEA6A255B13DC004B55C9 /* SceneDelegate.swift in Sources */,
 				50991EAD255BEC77002AD265 /* TableViewController.swift in Sources */,
 				50168D4A2582514F00311E3D /* TaskModel.swift in Sources */,
