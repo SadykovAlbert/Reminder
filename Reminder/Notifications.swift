@@ -15,7 +15,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     func requestAutorization(){
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            print("Permission granted: \(granted)")
+            //print("Permission granted: \(granted)")
             
             guard granted else{return}
             self.getNotificationSettings()
@@ -24,7 +24,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
     
     func getNotificationSettings(){
         notificationCenter.getNotificationSettings { (setting) in
-            print("Notification settings: \(setting)")
+            //print("Notification settings: \(setting)")
         }
     }
     
