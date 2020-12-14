@@ -104,7 +104,7 @@ class TableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
                 
-                let identifier = "id_\(title)"
+                let identifier = UUID().uuidString
                 
                 let task = Task()
                 task.task = title
