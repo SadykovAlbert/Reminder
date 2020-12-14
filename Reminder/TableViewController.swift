@@ -38,6 +38,8 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         cell.textLabel?.text = taskList1[indexPath.row].task
         cell.textLabel?.textColor = .black
         
